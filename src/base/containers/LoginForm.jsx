@@ -1,109 +1,138 @@
 import React, { Component } from 'react';
-import FormErrors from './FormError';
 
-var hotStyle = {
-  color: 'black',
-  height: '200px',
-  width: '200px',
-  border: '1px solid red',
-  backgroundColor: 'green'
-};
+// import FormErrors from './FormError';
 
 class LoginForm extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      email: '',
-      password: '',
-      formErrors: { email: '', password: '' },
-      emailValid: false,
-      passwordValid: false,
-      formValid: false
+      fields: {},
+      errors: {}
     };
   }
 
-  handleUserInput = e => {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState({ [name]: value }, () => {
-      this.validateField(name, value);
-    });
-  };
+  handleValidation() {
+    let fields = this.state.fields;
+    let errors = {};
+    let formIsValid = true;
 
-  validateField(fieldName, value) {
-    let fieldValidationErrors = this.state.formErrors;
-    let emailValid = this.state.emailValid;
-    let passwordValid = this.state.passwordValid;
-
-    switch (fieldName) {
-      case 'email':
-        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-        break;
-      case 'password':
-        passwordValid = value.match(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/i
-        );
-        fieldValidationErrors.password = passwordValid ? '' : ' is too short';
-        break;
-      default:
-        break;
+    //Password
+    if (!fields['password']) {
+      formIsValid = false;
+      errors['password'] = 'Cannot be empty';
     }
-    this.setState(
-      {
-        formErrors: fieldValidationErrors,
-        emailValid: emailValid,
-        passwordValid: passwordValid
-      },
-      this.validateForm
-    );
+
+    if (typeof fields['password'] !== 'undefined') {
+      if (
+        !fields['password'].match(
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/i
+        )
+      ) {
+        formIsValid = false;
+        errors['password'] = 'Invalid password';
+      }
+    }
+
+    //Email
+    if (!fields['email']) {
+      formIsValid = false;
+      errors['email'] = 'Cannot be empty';
+    }
+
+    if (typeof fields['email'] !== 'undefined') {
+      if (!fields['email'].match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+        formIsValid = false;
+        errors['email'] = 'Invalid email';
+      }
+    }
+
+    this.setState({ errors: errors });
+    return formIsValid;
   }
 
-  validateForm() {
-    this.setState({
-      formValid: this.state.emailValid && this.state.passwordValid
-    });
+  contactSubmit(e) {
+    e.preventDefault();
+    if (this.handleValidation()) {
+      // alert("Form submitted");  TODO: brak autoryzacji "invali email or password"
+    } else {
+      // alert("invalid email or password")
+    }
   }
 
-  errorClass(error) {
-    return error.length === 0 ? '' : 'has-error';
+  handleChange(field, e) {
+    let fields = this.state.fields;
+    fields[field] = e.target.value;
+    this.setState({ fields });
   }
 
   render() {
     return (
-      <form action="">
-        <div className="login-form">
-          <div style={hotStyle}>
-            <FormErrors formErrors={this.state.formErrors} />
-          </div>
+      <div className="login-box">
+        <div className="login-box__login-bg">
+          <form
+            className="login-box__position"
+            onSubmit={this.contactSubmit.bind(this)}
+          >
+            <div className="form element-mbottom--20">
+              <div className="element-mbottom--20">
+                <label
+                  htmlFor="email"
+                  className="form__labels element-mbottom--5"
+                >
+                  Email
+                </label>
+                <input
+                  className="form__input"
+                  refs="email"
+                  type="text"
+                  placeholder="Email"
+                  onChange={this.handleChange.bind(this, 'email')}
+                  value={this.state.fields['email']}
+                />
+                <span className="form__error">
+                  {this.state.errors['email']}
+                </span>
+              </div>
+              <div className="element-mbottom--10">
+                <label
+                  htmlFor="password"
+                  className="form__labels element-mbottom--5"
+                >
+                  Password
+                </label>
+                <input
+                  className="form__input"
+                  ref="password"
+                  type="password"
+                  placeholder="Password"
+                  onChange={this.handleChange.bind(this, 'password')}
+                  value={this.state.fields['password']}
+                />
+                <span className="form__error">
+                  {this.state.errors['password']}
+                </span>
+              </div>
+            </div>
 
-          <div className={`${this.errorClass(this.state.formErrors.email)}`}>
-            <label htmlFor="email">email</label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              value={this.state.email}
-              onChange={this.handleUserInput}
-            />
-          </div>
-
-          <div className={`${this.errorClass(this.state.formErrors.password)}`}>
-            <label htmlFor="password">password</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              value={this.state.password}
-              onChange={this.handleUserInput}
-            />
-          </div>
-
-          <label htmlFor="remember">Remember me</label>
-          <input type="checkbox" name="remember" id="remember" />
-          <input type="submit" value="login" />
+            <div className="page-btn--center">
+              <input
+                className="my-checkbox"
+                type="checkbox"
+                name="remember"
+                id="remember"
+              />
+              <button
+                className="page-btn page-btn--mleft"
+                id="submit"
+                value="Submit"
+              >
+                Login
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     );
   }
 }

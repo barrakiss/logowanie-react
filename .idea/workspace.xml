@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="590d4225-9eac-47e1-856f-2d73ee462bf5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -15,11 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="672">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".eslintrc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.eslintrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -48,6 +58,7 @@
         <option value="$PROJECT_DIR$/build/static/css/main.c17080f1.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.eslintrc" />
       </list>
     </option>
   </component>
@@ -83,11 +94,6 @@
             <path>
               <item name="logowanie-react" type="b2602c69:ProjectViewProjectNode" />
               <item name="logowanie-react" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="logowanie-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="logowanie-react" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -133,12 +139,12 @@
       <updated>1524140765248</updated>
       <workItem from="1524140766583" duration="580000" />
       <workItem from="1524141348528" duration="1375000" />
-      <workItem from="1524142761337" duration="402000" />
+      <workItem from="1524142761337" duration="535000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2357000" />
+    <option name="totallyTimeSpent" value="2490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1735" y="30" width="1865" height="1050" extended-state="6" />
@@ -218,8 +224,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="672">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>

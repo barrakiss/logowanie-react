@@ -1,3 +1,6 @@
+@charset "utf-8";
+@import './assets/sass/abstracts/_variables.scss';
+
 body {
   margin: 0;
   padding: 0;

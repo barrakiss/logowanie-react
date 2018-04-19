@@ -105,3 +105,24 @@ section {
   padding: 0;
   margin: 0;
 }
+
+.formErrors {
+  background-color: red;
+}
+
+.login-form {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

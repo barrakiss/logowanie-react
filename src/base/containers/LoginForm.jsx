@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-// import FormErrors from './FormError';
-
 class LoginForm extends Component {
   constructor(props) {
     super(props);

@@ -53,10 +53,14 @@ class LoginForm extends Component {
 
   contactSubmit(e) {
     e.preventDefault();
-    if (this.handleValidation()) {
-      // alert("Form submitted");  TODO: brak autoryzacji "invali email or password"
-    } else {
-      // alert("invalid email or password")
+    if (
+      this.handleValidation() &&
+      this.state.fields['email'] === 'asd@asd.asd' &&
+      this.state.fields['password'] === 'Password1'
+    ) {
+      alert('Login succesfull');
+    } else if (this.handleValidation()) {
+      alert('Invalid email or password');
     }
   }
 

@@ -79,7 +79,7 @@ class LoginForm extends Component {
             className="login-box__position"
             onSubmit={this.contactSubmit.bind(this)}
           >
-            <div className="form element-mbottom--20">
+            <div className="form element-mbottom--50">
               <div className="element-mbottom--20">
                 <label
                   htmlFor="email"

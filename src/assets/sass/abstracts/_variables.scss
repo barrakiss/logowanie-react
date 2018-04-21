@@ -1,14 +1,24 @@
-$bg: #333333;
-$theme: #FFBE43;
+$theme: #333333;
+$theme_modifier: #FFBE43;
+$theme_mask: rgba(255, 190, 67, 0.9);
+$error_message: #AD2E24;
 
 $margin: 5 10 15 20 25 30 40 50 60 70 80 90 100;
 
 .element {
   @each $m in $margin {
-      &-mbottom {
-	      &--#{$m} {
-	        margin-bottom: #{$m}px !important;
-	      }
-      }
+	&-mbottom {
+	  &--#{$m} {
+		margin-bottom: #{$m}px !important;
+	  }
+	}
   }
 }
+
+$grid-breakpoints: (
+		xs: 0,
+		sm: 576px,
+		md: 768px,
+		lg: 992px,
+		xl: 1200px
+);

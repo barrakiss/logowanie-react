@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 .element-mbottom--5 {
   margin-bottom: 5px !important;
 }
@@ -160,11 +161,12 @@ section {
 
 .page-btn {
   width: 100px;
-  padding: 5px;
+  padding: 10px;
   border: 1px solid transparent;
   border-radius: 25px;
   background-color: #333333;
   color: #ffbe43;
+  font-weight: bold;
   transition: 0.5s;
 }
 .page-btn:hover {
@@ -187,9 +189,11 @@ section {
   color: #333333;
   font-size: 10px;
   text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .form__input {
+  width: 100%;
   color: #333333;
   border: none;
   border-bottom: 1px solid #333333;
@@ -204,9 +208,10 @@ section {
 
 .form__error {
   display: block;
-  color: purple;
+  color: #ad2e24;
   font-size: 12px;
   margin-top: 5px;
+  font-weight: bold;
 }
 
 .my-checkbox[type='checkbox']:before {
@@ -241,8 +246,8 @@ section {
 }
 
 .login-box {
-  height: 500px;
-  width: 400px;
+  height: 50%;
+  width: 40%;
   position: relative;
   background-image: url('./assets/img/form-bg.jpg');
   background-repeat: no-repeat;
@@ -264,20 +269,28 @@ section {
   border-radius: 10px;
 }
 .login-box__position {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-self: center;
 }
-
-.d-none {
-  display: none;
+@media (max-width: 991px) {
+  .login-box {
+    width: 80%;
+  }
+}
+@media (max-width: 575px) {
+  .login-box {
+    width: 95%;
+  }
 }
 
-#root {
+.app {
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #333333;
+  font-family: 'Ubuntu', sans-serif;
 }

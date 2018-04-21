@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import logo from './assets/img/logo.svg';
 import './App.css';
 import LoginForm from './base/containers/LoginForm.jsx';
 
@@ -12,15 +11,24 @@ class App extends Component {
     };
   }
 
+  loginUser() {
+    this.setState({ isLogged: true });
+  }
+
   render() {
-    return (
-      <div className="app">
-        <header className="app-header">
-          {/*<img src={logo} className="app-logo" alt="logo"/>*/}
-        </header>
-        <LoginForm isLogged={this.state.isLogged} />
-      </div>
-    );
+    if (!this.state.isLogged) {
+      return (
+        <div className="app">
+          <LoginForm loginUser={this.loginUser.bind(this)} />
+        </div>
+      );
+    } else {
+      return (
+        <div className="app">
+          <header className="app-header">WELCOME!!!</header>
+        </div>
+      );
+    }
   }
 }
 

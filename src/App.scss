@@ -1,14 +1,17 @@
 @import "./assets/sass/abstracts/variables";
+@import "./assets/sass/abstracts/mixins";
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import "./assets/sass/base/reset";
 @import "./assets/sass/components/buttons";
 @import "./assets/sass/layout/forms";
 @import "./assets/sass/pages/login";
 
-#root {
+.app {
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $bg;
+  background-color: $theme;
+  font-family: 'Ubuntu', sans-serif;
 }

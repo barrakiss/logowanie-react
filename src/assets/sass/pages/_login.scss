@@ -1,6 +1,6 @@
 .login-box {
-  height: 500px;
-  width: 400px;
+  height: 50%;
+  width: 40%;
   position: relative;
   background-image: url("./assets/img/form-bg.jpg");
   background-repeat: no-repeat;
@@ -18,20 +18,22 @@
     justify-content: center;
     top: 0;
     left: 0;
-    background-color: rgba(255, 190, 67, 0.9);
+    background-color: $theme_mask;
     border-radius: 10px;
   }
 
   &__position {
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-self: center;
   }
 
+  @include media-breakpoint-down(lg) {
+    width: 80%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 95%;
+  }
 }
-
-.d-none {
-  display: none;
-}
-
-

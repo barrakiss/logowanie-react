@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import LoginForm from './base/containers/LoginForm.jsx';
+import Welcome from './base/containers/Welcome.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class App extends Component {
     } else {
       return (
         <div className="app">
-          <header className="app-header">WELCOME!!!</header>
+          <Welcome />
         </div>
       );
     }

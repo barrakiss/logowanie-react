@@ -198,6 +198,7 @@ section {
   border: none;
   border-bottom: 1px solid #333333;
   background-color: transparent;
+  font-size: 20px;
 }
 .form__input:focus {
   outline-color: transparent;

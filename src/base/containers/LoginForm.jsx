@@ -12,6 +12,10 @@ class LoginForm extends Component {
     };
   }
 
+  loginUser(login, password) {
+    return login === 'test@test.pl' && password === 'Password1';
+  }
+
   handleValidation() {
     let fields = this.state.fields;
     let errors = {};
@@ -55,10 +59,9 @@ class LoginForm extends Component {
     e.preventDefault();
     if (
       this.handleValidation() &&
-      this.state.fields['email'] === 'asd@asd.asd' &&
-      this.state.fields['password'] === 'Password1'
+      this.loginUser(this.state.fields['email'], this.state.fields['password'])
     ) {
-      alert('Login succesfull');
+      this.props.loginUser();
     } else if (this.handleValidation()) {
       alert('Invalid email or password');
     }
@@ -129,7 +132,7 @@ class LoginForm extends Component {
               <button
                 className="page-btn page-btn--mleft"
                 id="submit"
-                value="Submit"
+                type="Submit"
               >
                 Login
               </button>

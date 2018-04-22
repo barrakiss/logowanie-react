@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
     "node-sass-chokidar": "^1.2.2",
@@ -10,8 +12,7 @@
     "prettier": "^1.12.1",
     "react": "^16.3.2",
     "react-anime": "^2.1.0",
-    "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "react-dom": "^16.3.2"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -27,7 +28,13 @@
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "jest": "^22.4.3",
+    "regenerator-runtime": "^0.11.1"
   }
 }
